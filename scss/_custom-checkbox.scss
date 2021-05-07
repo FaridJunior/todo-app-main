@@ -1,0 +1,39 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+.dark-theme .custom-checkbox {
+  border: 1px solid var(--very-dark-grayish-blue-100);
+}
+.light-theme .custom-checkbox {
+  border: 1px solid var(--dark-grayish-blue);
+}
+
+.custom-checkbox {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  min-height: 22px;
+  min-width: 22px;
+  border-radius: 50%;
+  background: inherit;
+  &:hover {
+    border: 1px solid var(--bright-blue);
+  }
+}
+
+input:checked ~ .custom-checkbox {
+  background: var(--check-background);
+}
+
+input:checked ~ .custom-checkbox::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: url(../images/icon-check.svg) no-repeat;
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

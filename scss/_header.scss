@@ -1,0 +1,57 @@
+.light-theme .header {
+  .logo {
+    color: var(--very-light-gray);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  .logo {
+    font-size: 2.4rem;
+    letter-spacing: 16px;
+    line-height: 3rem;
+    font-weight: bold;
+  }
+
+  // start theme toggler
+  .theme-toggler {
+    display: none;
+  }
+  .theme-toggler__label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .dark-theme-option,
+  .light-theme-option {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    svg {
+      margin-right: 0.3rem;
+    }
+  }
+  .light-theme-option {
+    display: none;
+  }
+  .theme-toggler:checked ~ .dark-theme-option {
+    display: none;
+  }
+  .theme-toggler:checked ~ .light-theme-option {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 800px) {
+  .header {
+    .logo {
+      font-size: 2rem;
+      letter-spacing: 6px;
+    }
+  }
+}

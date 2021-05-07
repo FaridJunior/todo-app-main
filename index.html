@@ -24,46 +24,121 @@
     <title>Frontend Mentor | Todo app | Mohamed Farid</title>
     <style></style>
   </head>
-  <body>
-    <div class="app-wrapper">
-      <div class="header">
-        <span class="logo">TODO</span> <button class="theme-toggle">🌕</button>
-      </div>
-      <form class="add-todo-form">
-        <input type="text" class="add-todo-input" />
-      </form>
-      <div class="todo-list">
-        <div class="todo-item">
-          <input type="checkbox" name="" id="" /> it is todo
+  <body class="">
+    <div class="container dark-theme">
+      <div class="app-wrapper">
+        <div class="header">
+          <span class="logo">TODO</span>
+          <label class="theme-toggler__label" for="theme-toggler">
+            <input type="checkBox" class="theme-toggler" id="theme-toggler" />
+            <span class="dark-theme-option">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                <path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M13 21a1 1 0 011 1v3a1 1 0 11-2 0v-3a1 1 0 011-1zm-5.657-2.343a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414-1.414l2.12-2.121a1 1 0 011.415 0zm12.728 0l2.121 2.121a1 1 0 01-1.414 1.414l-2.121-2.12a1 1 0 011.414-1.415zM13 8a5 5 0 110 10 5 5 0 010-10zm12 4a1 1 0 110 2h-3a1 1 0 110-2h3zM4 12a1 1 0 110 2H1a1 1 0 110-2h3zm18.192-8.192a1 1 0 010 1.414l-2.12 2.121a1 1 0 01-1.415-1.414l2.121-2.121a1 1 0 011.414 0zm-16.97 0l2.121 2.12A1 1 0 015.93 7.344L3.808 5.222a1 1 0 011.414-1.414zM13 0a1 1 0 011 1v3a1 1 0 11-2 0V1a1 1 0 011-1z"
+                />
+              </svg>
+            </span>
+            <span class="light-theme-option">
+              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                <path
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                  d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"
+                />
+              </svg>
+            </span>
+          </label>
         </div>
-        <div class="todo-footer">
-          <div class="items-left">items left <span>5</span></div>
-          <div class="todo-filters-wrapper desktop-only">
-            <ul class="todo-filters">
-              <li>All</li>
-              <li>Active</li>
-              <li>Completed</li>
-            </ul>
+        <form class="add-todo-form">
+          <div class="custom-checkbox-wrapper">
+            <input type="checkbox" id="check-todo" />
+            <label for="check-todo" class="custom-checkbox"
+              ><span class="sr-only"> check todo </span>
+            </label>
+          </div>
+
+          <label for="" class="sr-only"> add new todo </label>
+          <input
+            id="add-todo-input"
+            type="text"
+            class="add-todo-input"
+            placeholder="Create a new todo..."
+            autocomplete="off"
+          />
+        </form>
+        <div class="todo-list">
+          <div class="todo-item">
+            <div class="custom-checkbox-wrapper">
+              <input type="checkbox" id="item-1" />
+              <label for="item-1" class="custom-checkbox">
+                <span class="sr-only"> check todo </span>
+              </label>
+            </div>
+            <p class="todo-text">love my self</p>
+            <button class="todo-item-delete">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <path
+                  fill="#494C6B"
+                  fill-rule="evenodd"
+                  d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="todo-item">
+            <div class="custom-checkbox-wrapper">
+              <input type="checkbox" id="item-2" />
+              <label for="item-2" class="custom-checkbox">
+                <span class="sr-only"> check todo </span>
+              </label>
+            </div>
+            <p class="todo-text">work hard</p>
+          </div>
+
+          <div class="todo-item">
+            <div class="custom-checkbox-wrapper">
+              <input type="checkbox" id="item-3" />
+              <label for="item-3" class="custom-checkbox">
+                <span class="sr-only"> check todo </span>
+              </label>
+            </div>
+            <p class="todo-text">play hard</p>
+          </div>
+
+          <div class="todo-footer">
+            <div class="items-left">items left <span>5</span></div>
+            <div class="todo-filters-wrapper desktop-only">
+              <ul class="todo-filters">
+                <li class="todo-filter todo-filter-active">
+                  <a href="/">All</a>
+                </li>
+                <li class="todo-filter"><a href="/">Active</a></li>
+                <li class="todo-filter"><a href="/">Completed</a></li>
+              </ul>
+            </div>
+            <button class="clear-complete">Clear Completed</button>
           </div>
         </div>
-        <button class="clear-complete">Clear Completed</button>
+
+        <div class="todo-filters-wrapper mobile-only">
+          <ul class="todo-filters">
+            <li class="todo-filter todo-filter-active"><a href="/">All</a></li>
+            <li class="todo-filter"><a href="/">Active</a></li>
+            <li class="todo-filter"><a href="/">Completed</a></li>
+          </ul>
+        </div>
+        <footer>Drag and drop to reorder list</footer>
       </div>
 
-      <div class="todo-filters-wrapper mobile-only">
-        <ul class="todo-filters">
-          <li>All</li>
-          <li>Active</li>
-          <li>Completed</li>
-        </ul>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="mohamedfarid.ninja">Mohamed Farid</a>.
       </div>
-      <footer>Drag and drop to reorder list</footer>
-    </div>
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="mohamedfarid.ninja">Mohamed Farid</a>.
     </div>
   </body>
 </html>

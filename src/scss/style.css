@@ -8,7 +8,6 @@
 }
 
 .dark-theme {
-  --bg-img: url(../images/bg-desktop-dark.jpg);
   --very-dark-blue: hsl(235, 21%, 11%);
   --very-dark-desaturated-blue: hsl(235, 24%, 19%);
   --light-grayish-blue-100: hsl(234, 39%, 85%);
@@ -21,7 +20,6 @@
 }
 
 .light-theme {
-  --bg-img: url(../images/bg-desktop-light.jpg);
   --very-light-gray: hsl(0, 0%, 98%);
   --very-light-grayish-blue: hsl(236, 33%, 92%);
   --light-grayish-blue: hsl(233, 11%, 84%);
@@ -55,10 +53,23 @@ body {
 }
 
 .container {
-  background: var(--bg-img) no-repeat, var(--bg);
+  position: relative;
+  background: var(--bg);
   background-size: 100% 34%;
   padding-top: 74px;
   min-height: 100vh;
+}
+
+.container * {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 0;
 }
 
 .app-wrapper {
@@ -94,13 +105,15 @@ body {
   }
 }
 
+.dark-theme .light-theme-only {
+  display: none;
+}
+
+.light-theme .dark-theme-only {
+  display: none;
+}
+
 @media (max-width: 800px) {
-  .dark-theme {
-    --bg-img: url(../images/bg-mobile-dark.jpg);
-  }
-  .light-theme {
-    --bg-img: url(../images/bg-mobile-light.jpg);
-  }
   .container {
     background-size: 100% 30%;
     padding-top: 40px;
@@ -223,6 +236,7 @@ body {
   width: 100%;
   margin-left: 2rem;
   font-size: 1rem;
+  caret-color: var(--bright-blue);
 }
 
 .add-todo-input:focus {
@@ -239,7 +253,15 @@ body {
   background: var(--very-dark-desaturated-blue);
 }
 
+.dark-theme .todo-footer {
+  background: var(--very-dark-desaturated-blue);
+}
+
 .light-theme .todo-list {
+  background: #fff;
+}
+
+.light-theme .todo-footer {
   background: #fff;
 }
 
@@ -264,7 +286,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.4rem;
+  padding: 1.2rem;
   border-bottom: 1px solid var(--very-dark-grayish-blue-200);
 }
 
@@ -284,7 +306,6 @@ body {
 .todo-footer {
   font-weight: bold;
   font-size: 0.82rem;
-  background: var(--very-dark-desaturated-blue);
   color: var(--very-dark-grayish-blue-100);
   padding: 1rem;
   display: -webkit-box;
@@ -306,7 +327,7 @@ body {
   color: var(--light-grayish-blue-200);
 }
 
-.todo-filters .todo-filter-active {
+.todo-filters .active {
   color: var(--bright-blue);
 }
 

@@ -15,7 +15,6 @@ export const fetchTodos = (filter) => (dispatch, getState) => {
 
   return api.fetchTodos(filter).then(
     (response) => {
-      console.log(normalize(response, schema.arrayOfTodos));
       return dispatch({
         type: "FETECH_TODO_SUCCESS",
         filter,

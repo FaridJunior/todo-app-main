@@ -68,8 +68,8 @@
             autocomplete="off"
           />
         </form>
-        <div class="todo-list">
-          <div class="todo-item">
+        <ul class="todo-list">
+          <li class="todo-item">
             <div class="custom-checkbox-wrapper">
               <input type="checkbox" id="item-1" />
               <label for="item-1" class="custom-checkbox">
@@ -86,7 +86,7 @@
                 />
               </svg>
             </button>
-          </div>
+          </li>
 
           <div class="todo-item">
             <div class="custom-checkbox-wrapper">
@@ -107,20 +107,22 @@
             </div>
             <p class="todo-text">play hard</p>
           </div>
+        </ul>
 
-          <div class="todo-footer">
-            <div class="items-left">items left <span>5</span></div>
-            <div class="todo-filters-wrapper desktop-only">
-              <ul class="todo-filters">
-                <li class="todo-filter todo-filter-active">
-                  <a href="/">All</a>
-                </li>
-                <li class="todo-filter"><a href="/">Active</a></li>
-                <li class="todo-filter"><a href="/">Completed</a></li>
-              </ul>
-            </div>
-            <button class="clear-complete">Clear Completed</button>
+        <div class="todo-footer">
+          <div class="items-left">items left <span>5</span></div>
+
+          <div class="todo-filters-wrapper desktop-only">
+            <ul class="todo-filters">
+              <li class="todo-filter todo-filter-active">
+                <a href="/">All</a>
+              </li>
+              <li class="todo-filter"><a href="/">Active</a></li>
+              <li class="todo-filter"><a href="/">Completed</a></li>
+            </ul>
           </div>
+
+          <button class="clear-complete">Clear Completed</button>
         </div>
 
         <div class="todo-filters-wrapper mobile-only">
@@ -130,6 +132,7 @@
             <li class="todo-filter"><a href="/">Completed</a></li>
           </ul>
         </div>
+
         <footer>Drag and drop to reorder list</footer>
       </div>
 

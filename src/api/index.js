@@ -5,25 +5,21 @@ const fakeDatabase = {
     {
       id: v4(),
       text: "zero todo",
-      priority: "normal",
       completed: false,
     },
     {
       id: v4(),
       text: "first todo",
-      priority: "normal",
       completed: true,
     },
     {
       id: v4(),
       text: "second todo",
-      priority: "normal",
       completed: false,
     },
     {
       id: v4(),
       text: "first todo",
-      priority: "normal",
       completed: false,
     },
   ],
@@ -32,7 +28,7 @@ const fakeDatabase = {
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const fetchTodos = (filter) =>
-  delay(100).then(() => {
+  delay(0).then(() => {
     switch (filter) {
       case "all":
         return fakeDatabase.todos;

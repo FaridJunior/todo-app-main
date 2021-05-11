@@ -4,7 +4,7 @@ import Todo from "./Todo";
 
 const TodoList = ({ todos, onTodoClick, onTodoRemove }) => {
   return (
-    <ul>
+    <ul className="todo-list">
       {todos.map((todo, index) => {
         return (
           todo && (

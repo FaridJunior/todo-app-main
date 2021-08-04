@@ -14,7 +14,7 @@ const App = () => {
   const themeValue = { theme, setTheme };
   return (
     <ThemeContext.Provider value={themeValue}>
-      <div className={`container ${theme}-theme`}>
+      <div className={`container ${theme ? theme : "light"}-theme`}>
         <MainBgImg />
         <div className="app-wrapper">
           <Header />
